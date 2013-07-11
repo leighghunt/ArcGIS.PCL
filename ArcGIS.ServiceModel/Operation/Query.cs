@@ -50,6 +50,18 @@ namespace ArcGIS.ServiceModel.Operation
         [DataMember(Name = "geometry")]
         public IGeometry Geometry { get; set; }
 
+        /*
+         * Doesn't seem to be honoured.
+        /// <summary>
+        /// The well-known ID of the spatial reference of the input and output geometries as well as the mapExtent. 
+        /// If sr is not specified, the geometry and the mapExtent are assumed to be in the spatial reference of the map, 
+        /// and the output geometries are also in the spatial reference of the map.
+        /// </summary>
+        /// <remarks>Default is empty</remarks>
+        [DataMember(Name = "sr")]
+        public int SpatialReferenceWkid { get; set; }
+        */
+
         /// <summary>
         /// The type of geometry specified by the geometry parameter. 
         /// The geometry type can be an envelope, point, line, or polygon.
