@@ -24,7 +24,8 @@ namespace ArcGIS.ServiceModel.Serializers
 
         public Dictionary<String, String> AsDictionary<T>(T objectToConvert) where T : CommonParameters
         {
-            return ServiceStack.Text.TypeSerializer.ToStringDictionary<T>(objectToConvert);
+            Dictionary<String, String> dic = ServiceStack.Text.TypeSerializer.ToStringDictionary<T>(objectToConvert);;
+            return dic;
         }
 
         public T AsPortalResponse<T>(String dataToConvert) where T : IPortalResponse

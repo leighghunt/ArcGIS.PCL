@@ -368,7 +368,7 @@ namespace ArcGIS.Test
         [Fact]
         public async Task CanAddUpdateAndDelete()
         {
-            var gateway = new ArcGISGateway(_serviceStackSerializer);
+            var gateway = new ArcGISGateway(_jsonDotNetSerializer);
 
             var feature = new Feature<Point>();
             feature.Attributes.Add("type", 0);
@@ -385,7 +385,7 @@ namespace ArcGIS.Test
 
             var id = resultAdd.Adds.First().ObjectId;
 
-            feature.Attributes.Add("description", "'something'"); // problem with serialization means we need single quotes around string values
+            feature.Attributes.Add("description", "something"); // problem with serialization means we need single quotes around string values
             feature.Attributes.Add("objectId", id);
 
             var updates = new ApplyEdits<Point>(@"Fire/Sheep/FeatureServer/0".AsEndpoint())
